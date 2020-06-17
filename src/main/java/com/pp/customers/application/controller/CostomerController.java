@@ -19,11 +19,6 @@ public class CostomerController {
     @RequestMapping(value = "customers", method = RequestMethod.GET)
     public String customers(@RequestParam(value = "name", required = false) String name, Map<String, Object> map)
     {
-        /*if(name != "") {
-            map.put("name", customerRepo.getName());
-            return "customers";
-        }*/
-
         map.put("customers", customerRepo.findAll());
 
         return "customers";
